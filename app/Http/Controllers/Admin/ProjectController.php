@@ -52,53 +52,6 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    // public function store(Request $request)
-    // {
-
-    //     $request->validate(
-    //         [
-    //         'title' => 'required|string|max:255',
-    //         'github' => 'required|string|max:255',
-    //         'link' => 'required|string|max:255',
-    //         'languages' => 'required|string|max:255',
-    //         'image' => 'nullable',
-    //         ],
-    //         [
-    //             'title.required' => 'Il campo titolo è obbligatorio.',
-    //             'github.required' => 'Il campo GitHub è obbligatorio.',
-    //             'link.required' => 'Il campo link è obbligatorio.',
-    //             'languages.required' => 'Il campo lingue è obbligatorio.',
-
-    //         ]
-    //     );
-
-
-
-    //     $form_data = $request->all();
-    //     $slug = Project::generateSlug($request->title); // Genera lo slug corretto
-    //     $form_data['slug'] = $slug;
-    
-    //     $new_project = new Project();
-    //     $new_project->fill($form_data);
-    //     $new_project->save();
-        
-        
-    //     //dd($form_data);
-
-    //     // Creazione di un nuovo progetto con i dati validati
-    //     //$new_project = new Project();
-    //     // $project->title = $form_data['title'];
-    //     // $project->slug = Str::slug($form_data['title'], '-');
-    //     // $project->github = $form_data['github'];
-    //     // $project->link = $form_data['link'];
-    //     // $project->languages = $form_data['languages'];
-    //     // $new_project->save();
-
-    //     // Reindirizzamento alla pagina di visualizzazione del progetto appena creato
-    //     return redirect()->route('projects.index');
-
-
-    // }
 
     public function store(Request $request)
 {

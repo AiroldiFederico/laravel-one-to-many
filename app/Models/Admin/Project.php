@@ -19,6 +19,7 @@ class Project extends Model
         'title',
         'github',
         'link',
+        'image_path',
         'image',
         'languages',
         'slug',

@@ -49,8 +49,11 @@
                     {{-- Immagine --}}
                     <div class="mb-3">
                         <label for="project-image" class="form-label">Image</label>
-                        <input type="file" name="image" id="project-image" class="form-control">
+                        <input type="file" name="image" id="project-image" class="form-control @error('image') is-invalid @enderror">
                     </div>
+                        @error('image')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                 
                     {{-- Linguaggi --}}
                     <div class="mb-3">
