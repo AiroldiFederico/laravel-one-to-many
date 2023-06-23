@@ -24,4 +24,5 @@ class Project extends Model
         'slug',
     ];
     
+    protected $table = 'projects';
 }
