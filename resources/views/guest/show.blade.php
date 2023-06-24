@@ -18,9 +18,9 @@
 
             <p class="card-text">Languages: {{ $project->languages }}</p>
 
-            <div>
-                {{ $project->type->name }}
-            </div>
+            @isset($project->type)
+            <p>{{ $project->type->name }}</p>
+            @endisset
 
             <div class="mt-2 d-flex justify-content-start gap-2">
                 {{-- Edit button --}}

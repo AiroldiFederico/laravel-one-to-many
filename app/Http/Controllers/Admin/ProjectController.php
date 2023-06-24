@@ -154,6 +154,7 @@ class ProjectController extends Controller
         $project->github = $form_data['github'];
         $project->link = $form_data['link'];
         $project->languages = $form_data['languages'];
+        $project->type_id = $request->type_id; // Aggiungi questa riga per assegnare il nuovo tipo
         $project->save();
     
         return redirect()->route('admin.projects.show', $project->id);
