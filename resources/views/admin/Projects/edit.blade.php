@@ -21,6 +21,26 @@
             <label for="languages" class="mb-1">Linguaggi</label>
             <input type="text" name="languages" id="languages" class="form-control" value="{{ $project->languages }}" required>
         </div>
+
+        {{-- Ciclo type --}}
+        <label for="project-types" class="form-label">Type</label>
+        <div class="input-group mb-3 w-25">
+            {{-- <label class="input-group-text" for="project-types">Types</label> --}}
+            <select class="form-select @error('type_id') is-invalid @enderror"" id="project-types" name="type_id">
+
+                <option value="" selected> Scegli un tipo</option>
+
+                @foreach ($types as $elem)    
+                    <option value="{{ $elem->id }}" {{ old( 'type_id', $project->type_id ) == $elem->id ? 'selected' : '' }}> {{ $elem->name }} </option>
+                @endforeach
+
+            </select>
+        </div>
+        @error('type_id')
+        <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
+
         <button type="submit" class="btn btn-primary col-2">Aggiorna</button>
     </form>
 </div>

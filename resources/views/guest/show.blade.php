@@ -7,12 +7,20 @@
     <div class="card mt-5 col-5 m-auto">
         <img src="{{ asset('storage/' . $project->image) }}" class="card-img-top" alt="Project Image">
         <div class="card-body">
+
             <h5 class="card-title">{{ $project->title }}</h5>
+
             <p class="card-text">GitHub: <a href="{{ $project->github }}">{{ $project->github }}</a></p>
+
             @if($project->link)
                 <p class="card-text">Link: <a href="{{ $project->link }}">{{ $project->link }}</a></p>
             @endif
+
             <p class="card-text">Languages: {{ $project->languages }}</p>
+
+            <div>
+                {{ $project->type->name }}
+            </div>
 
             <div class="mt-2 d-flex justify-content-start gap-2">
                 {{-- Edit button --}}

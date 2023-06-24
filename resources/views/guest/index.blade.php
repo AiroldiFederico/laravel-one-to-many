@@ -14,6 +14,9 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ $project->title }}</h5>
                         <p class="card-text">{{ $project->languages }}</p>
+                        @isset($project->type)
+                        <p>{{ $project->type->name }}</p>
+                        @endisset
                         <a href="{{ route('projects.show', $project->id) }}" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
