@@ -65,14 +65,18 @@ class ProjectController extends Controller
         'link' => 'required|string|max:255',
         'languages' => 'required|string|max:255',
         'image' => 'nullable|image|max:2048', // Aggiunto il controllo per il tipo e la dimensione dell'immagine
-    ], [
+        'type_id' => 'nullable'
+        ],
+        [
         'title.required' => 'Il campo titolo è obbligatorio.',
         'github.required' => 'Il campo GitHub è obbligatorio.',
         'link.required' => 'Il campo link è obbligatorio.',
         'languages.required' => 'Il campo lingue è obbligatorio.',
         'image.image' => 'Il campo immagine deve essere un file di immagine.',
         'image.max' => 'La dimensione massima consentita per l\'immagine è 2 MB.',
-    ]);
+        ]
+    );
+
 
     $form_data = $request->all();
 

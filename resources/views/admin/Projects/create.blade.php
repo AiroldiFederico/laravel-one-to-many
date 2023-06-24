@@ -51,9 +51,9 @@
                         <label for="project-image" class="form-label">Image</label>
                         <input type="file" name="image" id="project-image" class="form-control @error('image') is-invalid @enderror">
                     </div>
-                        @error('image')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                    @error('image')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 
                     {{-- Linguaggi --}}
                     <div class="mb-3">
@@ -65,9 +65,10 @@
                     @enderror
 
                     {{-- Ciclo type --}}
-                    <div class="input-group mb-3">
-                        <label class="input-group-text" for="project-types">Types</label>
-                        <select class="form-select" id="project-types" name="type_id">
+                    <label for="project-types" class="form-label">Type</label>
+                    <div class="input-group mb-3 w-25">
+                        {{-- <label class="input-group-text" for="project-types">Types</label> --}}
+                        <select class="form-select @error('type_id') is-invalid @enderror"" id="project-types" name="type_id">
 
                             <option value="" selected> Scegli un tipo</option>
 
@@ -77,6 +78,9 @@
 
                         </select>
                     </div>
+                    @error('type_id')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
                 
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary">Create Project</button>
