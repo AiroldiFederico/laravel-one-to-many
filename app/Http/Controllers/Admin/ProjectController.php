@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+
 use App\Models\Admin\Project;
+use App\Models\Admin\Type;
+
 use Illuminate\Support\Str;
 use Spatie\LaravelIgnition\Recorders\DumpRecorder\Dump;
 use Illuminate\Support\Facades\Storage;
@@ -37,7 +40,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin\Projects\create');
+        $types = Type::all();
+        return view('admin\Projects\create', compact('types'));
     }
 
 

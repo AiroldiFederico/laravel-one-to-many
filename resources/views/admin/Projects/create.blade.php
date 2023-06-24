@@ -63,6 +63,20 @@
                     @error('languages')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
+
+                    {{-- Ciclo type --}}
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="project-types">Types</label>
+                        <select class="form-select" id="project-types" name="type_id">
+
+                            <option value="" selected> Scegli un tipo</option>
+
+                            @foreach ($types as $elem)    
+                                <option value="{{ $elem->id }}" > {{ $elem->name }} </option>
+                            @endforeach
+
+                        </select>
+                    </div>
                 
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary">Create Project</button>

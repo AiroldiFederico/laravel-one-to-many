@@ -4,6 +4,7 @@ namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 
 class Project extends Model
@@ -23,7 +24,14 @@ class Project extends Model
         'image',
         'languages',
         'slug',
+        'type_id'
     ];
     
     protected $table = 'projects';
+
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
 }
